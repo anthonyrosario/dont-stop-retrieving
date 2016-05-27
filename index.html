@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="vendor/styles/reset.css"></link>
+    <script id="results-template" type="text/x-handlebars-template">
+      <li>
+        <h3>{{name}}</h3>
+      </li>
+    </script>
+    <script id="single-park-template" type="text/x-handlebars-template">
+      <h2>{{name}}</h2>
+      <p>{{address}}</p>
+      <p>{{website}}</p>
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <h1>Name</h1>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">All Parks</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Link to seattle off leash site OR faq</a></li>
+      </ul>
+    </header>
+
+    <main>
+      <section id="home">
+        <img src="#">
+        <div class="search-bar">
+          <input class="address-input" type="text" placeholder="Enter Your Address" autocomplete="off"/>
+          <button>Submit</button>
+        </div>
+        <p>THIS IS WHERE THE DESCRIPTION GOES</p>
+      </section>
+      <section id="results">
+          <div class="map"></div>
+          <div class="search-bar">
+            <input class="address-input" type="text" placeholder="Change Address" autocomplete="off"/>
+            <button>Submit</button>
+          </div>
+          <ul class="search-results">
+          </ul>
+      </section>
+      <section id="about">
+        <ul>
+        </ul>
+      </section>
+      <section id="single-park">
+        <div class="map"></div>
+        <div class="park-info"></div>
+        <ul class="search-results">
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>Copyright Don't Stop Retrievin' 2016</p>
+    </footer>
+
+  </body>
+</html>
