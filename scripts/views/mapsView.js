@@ -1,6 +1,7 @@
 (function(module){
 
-  var $mapDiv = $('.map');
+  var mapOne = document.getElementById('map-one');
+  var mapTwo = document.getElementById('map-two');
 
   var myOptions = {
     zoom: 12,
@@ -12,14 +13,7 @@
     }
   };
 
-  var map1 = new google.maps.Map($mapDiv[0], myOptions);
-  var map2 = new google.maps.Map($mapDiv[1], myOptions);
-
-  function initialize() {
-    var input = document.getElementsByClassName('search-box');
-    var autocomplete = new google.maps.places.Autocomplete(input);
-  }
-
-  google.maps.event.addDomListener(window, 'load', initialize);
+  var map1 = new google.maps.Map(mapOne, myOptions);
+  var map2 = new google.maps.Map(mapTwo, myOptions);
 
 })();
