@@ -3,7 +3,7 @@
   var aboutView = {};
   //Function shows abouts section and hides sibling sections
   aboutView.initAboutPage = function() {
-    $('#about').show().siblings().hide();
-  }
+    $('#about').fadeIn('fast').siblings().hide();
+  };
   module.aboutView = aboutView;
 })(window);

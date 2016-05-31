@@ -70,6 +70,7 @@
     for (var i = 0; i < deleteMarker.length; i++) {
       deleteMarker[i].setMap(null);
     }
+    console.log('this is cleared');
   }
 
   google.maps.event.addDomListener(window, 'load', initialize); //come back to this
