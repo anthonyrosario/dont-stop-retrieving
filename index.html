@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="styles/layout/home.css"/>
     <link rel="stylesheet" href="styles/layout/results.css"/>
     <link rel="stylesheet" href="styles/layout/single-park.css"/>
+    <link rel="stylesheet" href="styles/layout/about.css"/>
     <link rel="stylesheet" href="styles/layout/footer.css"/>
 
     <script id="park-template" type="text/x-handlebars-template">
@@ -31,9 +32,9 @@
     <header>
       <h1>Don't Stop Retrievin'</h1>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">All Parks</a></li>
-        <li><a href="#">About</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/all-parks">All Parks</a></li>
+        <li><a href="/about">About</a></li>
         <li><a href="#">Link to seattle off leash site OR faq</a></li>
       </ul>
     </header>
@@ -71,7 +72,7 @@
     <footer>
       <p>Copyright Don't Stop Retrievin' 2016</p>
     </footer>
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="vendor/scripts/handlebars.js"></script>
     <script src="vendor/scripts/html5sql.js"></script>
@@ -81,9 +82,14 @@
     <script src="scripts/models/dogParkLocation.js"></script>
     <script src="scripts/models/parks.js"></script>
     <script src="scripts/models/parkData.js"></script>
+    <script src="scripts/views/aboutView.js"></script>
     <script src="scripts/views/mapsView.js"></script>
     <script src="scripts/views/parkDataView.js"></script>
+    <script src="scripts/views/homeView.js"></script>
     <script src="scripts/controllers/parkDataController.js"></script>
+    <script src="scripts/controllers/homeController.js"></script>
+    <script src="scripts/controllers/aboutController.js"></script>
+    <script src="scripts/controllers/routes.js"></script>
 
   </body>
 </html>
