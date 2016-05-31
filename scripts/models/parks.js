@@ -11,8 +11,10 @@
       'CREATE TABLE IF NOT EXISTS parks (' +
       'id INTEGER PRIMARY KEY, ' +
       'name VARCHAR NOT NULL, ' +
-      'location VARCHAR NOT NULL, ' +
-      'body TEXT NOT NULL);',
+      'address VARCHAR NOT NULL, ' +
+      'latitude VARCHAR NOT NULL, ' +
+      'longitude VARCHAR NOT NULL, ' +
+      'website VARCHAR NOT NULL);',
     callback
   );
   };
@@ -28,8 +30,8 @@
     webDB.execute(
       [
         {
-          'sql': 'INSERT INTO parks (name, location, body) VALUES (?, ?, ?);',
-          'data': [this.name, this.location, this.body],
+          'sql': 'INSERT INTO parks (name, address, latitude, longitude, website) VALUES (?, ?, ?, ?, ?);',
+          'data': [this.name, this.address, this.latitude, this.longitude, this.website],
         }
       ],
       callback
@@ -52,8 +54,8 @@
     webDB.execute(
       [
         {
-          'sql': 'UPDATE parks SET name = ?, location = ?, body = ?;',
-          'data': [this.name, this.location, this.body]
+          'sql': 'UPDATE parks SET name = ?, address = ?, latitude = ?, longitude = ?, website = ?;',
+          'data': [this.name, this.address, this.latitude, this.longitude, this.website]
         }
       ],
       callback
