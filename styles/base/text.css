@@ -1,0 +1,27 @@
+body {
+  font-size: 16px;
+  font-family: Arial;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+a {
+  font-size: 1.25rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+p {
+  font-size: 1rem;
+}
+
+button {
+  font-size: 0.75rem;
+  font-family: inherit;
+}
+
+input {
+  font-size: 0.75rem;
+}
