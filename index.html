@@ -1,13 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="styles/base.css"></link>
-    <link rel="stylesheet" href="styles/modules.css"><link>
-    <link rel="stylesheet" href="vendor/styles/reset.css"></link>
-    <link rel="stylesheet" href="styles/layout.css" />
-    <script id="results-template" type="text/x-handlebars-template">
+    <link rel="stylesheet" href="vendor/styles/reset.css"/>
+    <link rel="stylesheet" href="styles/base/text.css"/>
+    <link rel="stylesheet" href="styles/layout/map.css"/>
+    <link rel="stylesheet" href="styles/layout/header.css"/>
+    <link rel="stylesheet" href="styles/layout/home.css"/>
+    <link rel="stylesheet" href="styles/layout/results.css"/>
+    <link rel="stylesheet" href="styles/layout/single-park.css"/>
+    <link rel="stylesheet" href="styles/layout/about.css"/>
+    <link rel="stylesheet" href="styles/layout/footer.css"/>
+
+    <script id="park-template" type="text/x-handlebars-template">
+
       <li>
-        <h3>{{name}}</h3>
+          <h3>{{common_name}}</h3>
+          <p>{{address}}</p>
+          <p>{{city_feature}}</p>
+          <p>{{website}}</p>
+          <a href="/{{common_name}}">More Info</a>
       </li>
     </script>
     <script id="single-park-template" type="text/x-handlebars-template">
@@ -18,13 +29,13 @@
   </head>
 
   <body>
-    <header id="mainNav">
-      <h1>Name</h1>
+    <header>
+      <h1>Don't Stop Retrievin'</h1>
       <ul>
         <li><a href="/">Home</a></li>
-        <li><a href="#">All Parks</a></li>
+        <li><a href="/all-parks">All Parks</a></li>
         <li><a href="/about">About</a></li>
-        <li><a href="http://www.seattle.gov/parks/publications/OLArules.htm" target="_blank">FAQ</a></li>
+        <li><a href="#">Link to seattle off leash site OR faq</a></li>
       </ul>
     </header>
 
@@ -32,13 +43,13 @@
       <section id="home">
         <img src="#">
         <div class="search-bar">
-          <input class="address-input" type="text" placeholder="Enter Your Address" autocomplete="off"/>
+          <input class="address-input" id="home-page-search" type="text" placeholder="Enter Your Address" autocomplete="off"/>
           <button>Submit</button>
         </div>
         <p>THIS IS WHERE THE DESCRIPTION GOES</p>
       </section>
       <section id="results">
-          <div class="map"></div>
+          <div class="map" id="map-one"></div>
           <div class="search-bar">
             <input class="address-input" type="text" placeholder="Change Address" autocomplete="off"/>
             <button>Submit</button>
@@ -51,7 +62,7 @@
         </ul>
       </section>
       <section id="single-park">
-        <div class="map"></div>
+        <div class="map" id="map-two"></div>
         <div class="park-info"></div>
         <ul class="search-results">
         </ul>
@@ -61,12 +72,24 @@
     <footer>
       <p>Copyright Don't Stop Retrievin' 2016</p>
     </footer>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="vendor/scripts/handlebars.js"></script>
     <script src="vendor/scripts/html5sql.js"></script>
     <script src="vendor/scripts/webdb.js"></script>
     <script src="vendor/scripts/page.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdZPd9eqq9SQlYof16e_Gui2-pzfELs38&v=3.exp&libraries=visualization"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdZPd9eqq9SQlYof16e_Gui2-pzfELs38&v=3.exp&libraries=visualization&libraries=places"></script>
+    <script src="scripts/models/dogParkLocation.js"></script>
+    <script src="scripts/models/parks.js"></script>
+    <script src="scripts/models/parkData.js"></script>
+    <script src="scripts/views/aboutView.js"></script>
     <script src="scripts/views/mapsView.js"></script>
+    <script src="scripts/views/parkDataView.js"></script>
+    <script src="scripts/views/homeView.js"></script>
+    <script src="scripts/controllers/parkDataController.js"></script>
+    <script src="scripts/controllers/homeController.js"></script>
+    <script src="scripts/controllers/aboutController.js"></script>
+    <script src="scripts/controllers/routes.js"></script>
+
   </body>
 </html>

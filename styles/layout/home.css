@@ -1,0 +1,21 @@
+#home {
+  width: 90%;
+  margin: 0px 5% 20px 5%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#home img {
+  width: 96%;
+  margin-left: 2%;
+  margin-right: 2%;
+  height:400px;
+}
+
+#home .search-bar {
+  text-align: center;
+}
+
+#home input {
+  width: 20%;
+}
