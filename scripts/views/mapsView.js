@@ -1,5 +1,6 @@
  //(function(module){
   var infoWindow, map1;
+  var deleteMarker = [];
 
   function initialize() {
     var mapOne = document.getElementById('map-one');
@@ -26,10 +27,12 @@
     autocomplete.addListener('place_changed', locationMarker);
 
     function locationMarker () {
+      clearArray();
       var placeInfo = autocomplete.getPlace();
       var marker = new google.maps.Marker({map: map1, animation: google.maps.Animation.DROP, position: placeInfo.geometry.location});
       map1.setCenter(placeInfo.geometry.location);
       map1.setZoom(12);
+      deleteMarker.push(marker);
     }
 
   }
@@ -61,6 +64,12 @@
       });
       infoWindow.open(map, marker);
     });
+  }
+
+  function clearArray() {
+    for (var i = 0; i < deleteMarker.length; i++) {
+      deleteMarker[i].setMap(null);
+    }
   }
 
   google.maps.event.addDomListener(window, 'load', initialize); //come back to this
