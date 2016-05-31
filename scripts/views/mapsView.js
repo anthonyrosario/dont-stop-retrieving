@@ -1,9 +1,9 @@
-// (function(module){
-  var infoWindow, map1, map2;
+ //(function(module){
+  var infoWindow, map1;
+  var deleteMarker = [];
 
   function initialize() {
     var mapOne = document.getElementById('map-one');
-    var mapTwo = document.getElementById('map-two');
 
     var myOptions = {
       zoom: 11,
@@ -16,7 +16,6 @@
     };
 
     map1 = new google.maps.Map(mapOne, myOptions);
-    map2 = new google.maps.Map(mapTwo, myOptions);
 
     var input = document.getElementById('home-page-search');
     var options = {
@@ -28,24 +27,33 @@
     autocomplete.addListener('place_changed', locationMarker);
 
     function locationMarker () {
+      clearArray();
       var placeInfo = autocomplete.getPlace();
       var marker = new google.maps.Marker({map: map1, animation: google.maps.Animation.DROP, position: placeInfo.geometry.location});
       map1.setCenter(placeInfo.geometry.location);
       map1.setZoom(12);
+      deleteMarker.push(marker);
     }
 
-    for(var x in dogParkLocations) {
-      var park = dogParkLocations[x];
-      var location = new google.maps.LatLng(park.latitude, park.longitude);
-      addMarker(map1, park.name, location);
-    }
   }
+  function createParks() {
+    for(var i = 0; i < Park.all.length; i++) {
+      var park = Park.all[i];
+      console.log(park);
+      var location = new google.maps.LatLng(park['latitude'], park['longitude']);
+      addMarker(map1, park['common_name'], location);
+    }
+  };
 
   function addMarker(map, name, location) {
     var marker = new google.maps.Marker({
       position: location,
       map: map
     });
+
+    map.resizeMap = function(){
+      google.maps.event.trigger(map.map1, 'resize');
+    };
 
     google.maps.event.addListener(marker, 'click', function(){
       if (typeof infoWindow != 'undefined'){
@@ -58,6 +66,12 @@
     });
   }
 
-  google.maps.event.addDomListener(window, 'load', initialize);
+  function clearArray() {
+    for (var i = 0; i < deleteMarker.length; i++) {
+      deleteMarker[i].setMap(null);
+    }
+  }
+
+  google.maps.event.addDomListener(window, 'load', initialize); //come back to this
 
 // })();
