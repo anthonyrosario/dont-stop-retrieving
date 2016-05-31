@@ -25,6 +25,7 @@
     Park.all = data.map(function(ele){
       return new Park(ele);
     });
+    })
   };
 
   module.Park = Park;

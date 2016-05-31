@@ -11,7 +11,7 @@
       ctx.park = park;
       next();
     }
-    Park.findWhere('name', ctx.params.name.replace('+', ' '), parkData);
+    Park.findWhere('name', ctx.params.name.replace(' ', '%20'), parkData);
   }
   module.singleParkController = singleParkController;
 })(window);
