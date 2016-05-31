@@ -2,7 +2,7 @@
   var homeController = {};
 
   homeController.index = function() {
-    homeView.index();
+    homeView.initHomePage();
   }
 
   module.homeController = homeController;
