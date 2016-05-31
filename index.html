@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+
     <link rel="stylesheet" href="vendor/styles/reset.css"/>
     <link rel="stylesheet" href="styles/base/text.css"/>
     <link rel="stylesheet" href="styles/layout/map.css"/>
@@ -9,6 +10,20 @@
     <link rel="stylesheet" href="styles/layout/results.css"/>
     <link rel="stylesheet" href="styles/layout/single-park.css"/>
     <link rel="stylesheet" href="styles/layout/footer.css"/>
+
+    <script id="park-template" type="text/x-handlebars-template">
+    <li>
+      <a href="/{{common_name}}">
+        <div>
+          <h1>{{common_name}}</h1>
+          <p>{{address}}</p>
+          <p>{{city_feature}}</p>
+          <p>{{website}}</p>
+        </div>
+      </a>
+    </li>
+  </script>
+
     <script id="results-template" type="text/x-handlebars-template">
       <li>
         <h3>{{name}}</h3>
