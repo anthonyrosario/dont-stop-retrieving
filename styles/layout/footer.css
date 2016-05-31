@@ -1,6 +1,8 @@
 footer {
   height: 50px;
   width: 100%;
+  background-color: #0B314F;
+  color: #f7f2f2;
 }
 
 footer p {

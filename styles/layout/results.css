@@ -17,8 +17,9 @@
   display: inline-block;
   margin: 10px 3% 10px 3%;
   height: 200px;
-  width: 200px;
+  width: 45%;
   word-wrap: break-word;
+  border: 1px solid #0B314F;
 }
 
 li h3 {

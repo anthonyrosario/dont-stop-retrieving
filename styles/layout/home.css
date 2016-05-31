@@ -13,9 +13,9 @@
 }
 
 #home .search-bar {
-  text-align: center;
+  width: 100%;
 }
 
-#home input {
-  width: 20%;
+#home-page-search {
+  width: 90%;
 }
