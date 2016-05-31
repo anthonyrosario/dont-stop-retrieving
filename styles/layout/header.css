@@ -1,0 +1,17 @@
+header {
+  width: 100%;
+  height: 100px;
+  background-color: green;
+}
+
+header ul {
+  display: block;
+  text-align: center;
+  margin-top: 40px;
+}
+
+header li {
+  display: inline-block;
+  margin-left: 5%;
+  margin-right: 5%;
+}
