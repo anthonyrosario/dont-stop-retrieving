@@ -1,12 +1,7 @@
 // (function(module){
+  var infoWindow, map1, map2;
 
   function initialize() {
-    // var map = new google.maps.Map(document.getElementById('map-one'), {
-    //   center: new google.maps.LatLng(47.618217, -122.351832),
-    //   mapTypeId: google.maps.MapTypeId.STREET,
-    //   zoom: 12
-    // });
-
     var mapOne = document.getElementById('map-one');
     var mapTwo = document.getElementById('map-two');
 
@@ -20,18 +15,31 @@
       }
     };
 
-    var map1 = new google.maps.Map(mapOne, myOptions);
-    var map2 = new google.maps.Map(mapTwo, myOptions);
+    map1 = new google.maps.Map(mapOne, myOptions);
+    map2 = new google.maps.Map(mapTwo, myOptions);
 
     for(var x in dogParkLocations) {
       var park = dogParkLocations[x];
       var location = new google.maps.LatLng(park.latitude, park.longitude);
-      var marker = new google.maps.Marker({
-        position: location,
-        title: park.name,
-        map: map1
-      });
+      addMarker(map1, park.name, location);
     }
+  }
+
+  function addMarker(map, name, location) {
+    var marker = new google.maps.Marker({
+      position: location,
+      map: map
+    });
+
+    google.maps.event.addListener(marker, 'click', function(){
+      if (typeof infoWindow != 'undefined'){
+        infoWindow.close();
+      }
+      infoWindow = new google.maps.InfoWindow({
+        content: name
+      });
+      infoWindow.open(map, marker);
+    });
   }
 
   google.maps.event.addDomListener(window, 'load', initialize);
