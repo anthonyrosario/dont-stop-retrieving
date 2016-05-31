@@ -1,12 +1,16 @@
 (function(module) {
   var singleParkController = {};
 
-  Parks.createTable();
+  singleParkController.index = function(ctx) {
+    singleParkView.initSinglePark(ctx.park);
+  }
 
-  singleParkController.index = function() {
-
-    singleParkView.initSinglePark();
-  };
-
+  singleParkController.loadSinglePark = function(ctx, next) {
+    var parkData = function(park) {
+      ctx.park = park;
+      next();
+    }
+  Park.findWhere(ctx.params.id, parkData);
+  }
   module.singleParkController = singleParkController;
 })(window);

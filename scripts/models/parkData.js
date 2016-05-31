@@ -5,6 +5,14 @@
 
   Park.all = [];
 
+  function addUniqueIdentifier() {
+    for (var i = 0; i < Park.all.length; i++) {
+      var name = Park.all[i].common_name.match(/\w+/i);
+
+      Park.all[i].id = name[0];
+    }
+  }
+
   Park.getParks = function(next) {
     $.ajax({
       url: 'https://data.seattle.gov/resource/3c4b-gdxv.json?city_feature=Off+Leash+Areas',
@@ -26,7 +34,18 @@
     Park.all = data.map(function(ele){
       return new Park(ele);
     });
+    addUniqueIdentifier();
   };
+
+
+    Park.findWhere = function(value, callback) {
+      var singleParkObj = Park.all.filter(function(a) {
+        if(a.id === value) {
+          return a;
+        }
+      });
+      callback(singleParkObj);
+    };
 
   module.Park = Park;
 })(window);
