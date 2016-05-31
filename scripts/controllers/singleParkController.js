@@ -2,7 +2,6 @@
   var singleParkController = {}
 
   singleParkController.index = function(ctx, next) {
-
     singleParkView.initSinglePark(ctx.park);
   }
 
@@ -11,7 +10,7 @@
       ctx.park = park;
       next();
     }
-    Park.findWhere('name', ctx.params.name.replace(' ', '%20'), parkData);
+  Park.all.findWhere('id', ctx.params.id, parkData);
   }
   module.singleParkController = singleParkController;
 })(window);
