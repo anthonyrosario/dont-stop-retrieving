@@ -14,7 +14,7 @@
     // Park.all.forEach(function(a){
       // $('#single-park .search-results').append(a.toHtml($('#park-template')));
     // });
-    $('#single-park').show().siblings().hide();
+    $('#single-park').fadeIn('fast').siblings().hide();
   }
 
   module.singleParkView = singleParkView;

@@ -2,7 +2,7 @@
   var parkDataView = {};
 
   parkDataView.initResults = function() {
-    $('#results').show().siblings().hide();
+    $('#results').fadeIn('fast').siblings().hide();
     $('.search-results').empty();
     Park.all.forEach(function(park){
       $('.search-results').append(park.toHtml($('#park-template')));
