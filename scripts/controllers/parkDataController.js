@@ -2,7 +2,7 @@
   var parkDataController = {};
 
   parkDataController.index = function() {
-    Park.getParks(parkDataView.index);
+    Park.getParks(parkDataView.initResults);
   }
 
   module.parkDataController = parkDataController;
