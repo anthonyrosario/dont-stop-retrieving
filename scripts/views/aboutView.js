@@ -2,7 +2,7 @@
   // creates empty aboutView object
   var aboutView = {};
   //Function shows abouts section and hides sibling sections
-  aboutView.index = function() {
+  aboutView.initAboutPage = function() {
     $('#about').show().siblings().hide();
   }
   module.aboutView = aboutView;
