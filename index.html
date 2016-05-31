@@ -12,20 +12,12 @@
     <link rel="stylesheet" href="styles/layout/footer.css"/>
 
     <script id="park-template" type="text/x-handlebars-template">
-    <li>
-        <div>
-          <h1>{{common_name}}</h1>
+      <li>
+          <h3>{{common_name}}</h3>
           <p>{{address}}</p>
           <p>{{city_feature}}</p>
           <p>{{website}}</p>
           <a href="/{{common_name}}">More Info</a>
-        </div>
-    </li>
-  </script>
-
-    <script id="results-template" type="text/x-handlebars-template">
-      <li>
-        <h3>{{name}}</h3>
       </li>
     </script>
     <script id="single-park-template" type="text/x-handlebars-template">
@@ -79,6 +71,7 @@
     <footer>
       <p>Copyright Don't Stop Retrievin' 2016</p>
     </footer>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="vendor/scripts/handlebars.js"></script>
     <script src="vendor/scripts/html5sql.js"></script>
@@ -88,10 +81,8 @@
     <script src="scripts/models/dogParkLocation.js"></script>
     <script src="scripts/models/parks.js"></script>
     <script src="scripts/models/parkData.js"></script>
-
     <script src="scripts/views/mapsView.js"></script>
     <script src="scripts/views/parkDataView.js"></script>
-
     <script src="scripts/controllers/parkDataController.js"></script>
 
   </body>
