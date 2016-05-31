@@ -36,5 +36,15 @@
     addUniqueIdentifier();
   };
 
+
+    Park.findWhere = function(value, callback) {
+      var singleParkObj = Park.all.filter(function(a) {
+        if(a.id === value) {
+          return a;
+        }
+      });
+      callback(singleParkObj);
+    };
+
   module.Park = Park;
 })(window);
