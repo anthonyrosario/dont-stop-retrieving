@@ -1,0 +1,12 @@
+#single-park {
+  width: 90%;
+  margin: 0px 5% 20px 5%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.park-info {
+  width: 96%;
+  margin: 5px 2% 5px 2%;
+  height: 100px;
+}

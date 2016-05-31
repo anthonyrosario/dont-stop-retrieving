@@ -1,0 +1,27 @@
+#results {
+  width: 90%;
+  margin: 0px 5% 20px 5%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.search-results {
+  text-align: center;
+  width: 96%;
+  margin: 5px 2% 5px 2%;
+}
+
+.search-results li {
+  display: inline-block;
+  margin: 10px 3% 10px 3%;
+  height: 200px;
+  width: 200px;
+}
+
+#results .search-bar {
+  text-align: center;
+}
+
+#results input {
+  width: 20%;
+}
