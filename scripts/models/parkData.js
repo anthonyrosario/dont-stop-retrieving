@@ -11,15 +11,16 @@
       type: 'GET',
       success: function(data) {
         Park.loadParks(data);
+        createParks();
         next();
       }
     });
-  }
+  };
 
   Park.prototype.toHtml = function(template) {
     var template = Handlebars.compile((template).html());
     return template(this);
-  }
+  };
 
   Park.loadParks = function(data) {
     Park.all = data.map(function(ele){

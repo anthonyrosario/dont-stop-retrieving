@@ -1,9 +1,8 @@
-// (function(module){
-  var infoWindow, map1, map2;
+ //(function(module){
+  var infoWindow, map1;
 
   function initialize() {
     var mapOne = document.getElementById('map-one');
-    var mapTwo = document.getElementById('map-two');
 
     var myOptions = {
       zoom: 11,
@@ -16,7 +15,6 @@
     };
 
     map1 = new google.maps.Map(mapOne, myOptions);
-    map2 = new google.maps.Map(mapTwo, myOptions);
 
     var input = document.getElementById('home-page-search');
     var options = {
@@ -34,18 +32,25 @@
       map1.setZoom(12);
     }
 
-    for(var x in dogParkLocations) {
-      var park = dogParkLocations[x];
-      var location = new google.maps.LatLng(park.latitude, park.longitude);
-      addMarker(map1, park.name, location);
-    }
   }
+  function createParks() {
+    for(var i = 0; i < Park.all.length; i++) {
+      var park = Park.all[i];
+      console.log(park);
+      var location = new google.maps.LatLng(park['latitude'], park['longitude']);
+      addMarker(map1, park['common_name'], location);
+    }
+  };
 
   function addMarker(map, name, location) {
     var marker = new google.maps.Marker({
       position: location,
       map: map
     });
+
+    map.resizeMap = function(){
+      google.maps.event.trigger(map.map1, 'resize');
+    };
 
     google.maps.event.addListener(marker, 'click', function(){
       if (typeof infoWindow != 'undefined'){
@@ -58,6 +63,6 @@
     });
   }
 
-  google.maps.event.addDomListener(window, 'load', initialize);
+  google.maps.event.addDomListener(window, 'load', initialize); //come back to this
 
 // })();
