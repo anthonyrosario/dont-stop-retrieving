@@ -9,13 +9,26 @@
   width: 96%;
   margin-left: 2%;
   margin-right: 2%;
-  height:400px;
+  height: auto;
 }
 
 #home .search-bar {
-  width: 100%;
+  width: 96%;
+  margin: 2%;
 }
 
 #home-page-search {
-  width: 90%;
+  width: 77%;
+  margin: 0;
+  padding: 1%;
+  font-size: 1em;
+}
+
+#home p {
+  margin: 2%;
+}
+
+#home button {
+  font-size: 1em;
+  padding: 1%;
 }
