@@ -1,7 +1,7 @@
 (function(module){
-  var parkView = {};
+  var parkDataView = {};
 
-  parkView.index = function() {
+  parkDataView.index = function() {
     console.log(Park.all);
     $('.search-results').empty();
     Park.all.forEach(function(park){

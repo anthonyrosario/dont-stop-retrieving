@@ -1,9 +1,9 @@
 (function(module){
-  var parkController = {};
+  var parkDataController = {};
 
-  parkController.index = function() {
-    Park.getParks(parkView.index);
+  parkDataController.index = function() {
+    ParkData.getParks(parkDataView.index);
   }
 
-  module.parkController = parkController;
+  module.parkDataController = parkDataController;
 })(window);
