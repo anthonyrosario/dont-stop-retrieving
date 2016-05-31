@@ -1,5 +1,5 @@
 (function(module) {
-  var singleParkController = {}
+  var singleParkController = {};
 
   singleParkController.index = function(ctx) {
     singleParkView.initSinglePark(ctx.park);
