@@ -29,7 +29,7 @@
       text: reviewText
     };
     Review.submitReview(review);
-
+    reviewView.initReview(review);
     document.getElementById('reviewName').value = '';
     document.getElementById('reviewText').value = '';
 
