@@ -16,5 +16,17 @@
     };
     Park.findWhere(ctx.params.id, parkData);
   };
+
+  $('#reviewBtn').on('click', function(e) {
+    e.preventDefault();
+    var reviewName = $('#reviewName').val();
+    var reviewText = $('#reviewText').val();
+    var review = {
+      name: reviewName,
+      text: reviewText
+    };
+    reviewData.submitReview(review);
+  });
+
   module.singleParkController = singleParkController;
 })(window);
