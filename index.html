@@ -12,29 +12,29 @@
     <link rel="stylesheet" href="styles/layout/footer.css"/>
     <script id="nearest-park-template" type="text/x-handlebars-template">
       <li>
-          <h3>{{common_name}}</h3>
+          <h3>{{name}}</h3>
           <p>{{address}}</p>
-          <p>{{city_feature}}</p>
+          <p>{{cityFeature}}</p>
           <p>Distance from your selected Location: {{distance}} Miles</p>
           <a href="{{website}}">Visit website</a>
-          <a href="/park/{{id}}">More Info</a>
+          <a href="/park/{{siteUrl}}">More Info</a>
       </li>
     </script>
     <script id="park-template" type="text/x-handlebars-template">
       <li>
-          <h3>{{common_name}}</h3>
+          <h3>{{name}}</h3>
           <p>{{address}}</p>
-          <p>{{city_feature}}</p>
+          <p>{{cityFeature}}</p>
           <a href="{{website}}">Visit website</a>
-          <a href="/park/{{id}}">More Info</a>
+          <a href="/park/{{siteUrl}}">More Info</a>
       </li>
     </script>
     <script id="single-park-template" type="text/x-handlebars-template">
-      <h2>{{common_name}}</h2>
-      <img src="/images/{{img}}" />
+      <h2>{{name}}</h2>
+      <img src="/images/{{imageUrl}}" />
       <p>Hours: {{hours}}</p>
       <p>Address: {{address}}</p>
-      <p><a href="{{website}}">{{common_name}} Website</a></p>
+      <p><a href="{{website}}">{{name}} Website</a></p>
     </script>
   </head>
 
@@ -128,7 +128,7 @@
     <script src="scripts/controllers/nearestParksController.js"></script>
     <script src="scripts/controllers/routes.js"></script>
     <script>Park.createTable()</script>
-    <script>Park.fetchAll()</script>
+    <script>Park.fetchAll(Park.initHomePage)</script>
 
   </body>
 </html>

@@ -2,7 +2,7 @@
   var nearestParksController = {};
 
   nearestParksController.index = function() {
-    Park.getParks(nearestParksView.initResults);
+    nearestParksView.initResults();
   };
 
   module.nearestParksController = nearestParksController;

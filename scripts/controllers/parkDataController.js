@@ -3,8 +3,7 @@
 
   parkDataController.index = function(ctx, next) {
     clearArray();
-    Park.getParks(parkDataView.initResults);
-    // next();
+    Park.fetchAll(parkDataView.initResults);
   };
 
   module.parkDataController = parkDataController;
