@@ -43,7 +43,6 @@
   function createParks() {
     for(var i = 0; i < Park.all.length; i++) {
       var park = Park.all[i];
-      console.log(park);
       var location = new google.maps.LatLng(park['latitude'], park['longitude']);
       addMarker(map1, park['common_name'], location);
     }
