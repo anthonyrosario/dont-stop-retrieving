@@ -49,9 +49,11 @@
   };
 
   function addMarker(map, name, location) {
+    var dogIcon = '/../../images/dog_face.png';
     var marker = new google.maps.Marker({
       position: location,
-      map: map
+      map: map,
+      icon: dogIcon
     });
 
     google.maps.event.trigger($('#map-one')[0], 'resize');
