@@ -51,9 +51,7 @@
       map: map
     });
 
-    map.resizeMap = function(){
-      google.maps.event.trigger(map.map1, 'resize');
-    };
+    google.maps.event.trigger($('#map-one')[0], 'resize');
 
     google.maps.event.addListener(marker, 'click', function(){
       if (typeof infoWindow != 'undefined'){
