@@ -28,14 +28,9 @@
       park: park[1],
       text: reviewText
     };
-<<<<<<< HEAD
-    reviewData.submitReview(review);
-    reviewView.initReview(review);
+    Review.submitReview(review);
     document.getElementById('reviewName').value = '';
     document.getElementById('reviewText').value = '';
-=======
-    Review.submitReview(review);
->>>>>>> 46e81d81c2cd9c22f4af2891980de376c6ff2031
   });
 
   module.singleParkController = singleParkController;
