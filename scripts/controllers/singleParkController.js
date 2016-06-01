@@ -21,8 +21,6 @@
     e.preventDefault();
     var reviewName = $('#reviewName').val();
     var reviewText = $('#reviewText').val();
-    console.log(reviewName);
-    console.log(reviewText);
     var review = {
       name: reviewName,
       text: reviewText
