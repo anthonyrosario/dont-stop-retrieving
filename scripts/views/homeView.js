@@ -7,7 +7,7 @@
   };
   $('#submit').on('click', function() {
     $('#results').fadeIn('fast').siblings().hide();
-    parkDataController.index();
+    nearestParksController.index();
   });
   module.homeView = homeView;
 })(window);

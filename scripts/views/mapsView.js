@@ -31,12 +31,12 @@
     function locationMarker () {
       clearArray();
       var placeInfo = autocomplete.getPlace();
-      userLat = placeInfo.geometry.location.lat();
-      userLng = placeInfo.geometry.location.lng();
       var marker = new google.maps.Marker({map: map1, animation: google.maps.Animation.DROP, position: placeInfo.geometry.location});
       map1.setCenter(placeInfo.geometry.location);
       map1.setZoom(12);
       deleteMarker.push(marker);
+      userLat = placeInfo.geometry.location.lat();
+      userLng = placeInfo.geometry.location.lng();
     }
 
   }

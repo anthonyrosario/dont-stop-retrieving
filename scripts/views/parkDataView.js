@@ -2,11 +2,10 @@
   var parkDataView = {};
 
   parkDataView.initResults = function() {
-    var nearestParks = [];
     $('#results').fadeIn('fast').siblings().hide();
     $('.search-results').empty();
-    nearestParks = MapLocation.findDistance(Park.all, userLat, userLng);
-    nearestParks.forEach(function(park){
+    Park.all.forEach(function(park){
+      console.log(park);
       $('.search-results').append(park.toHtml($('#park-template')));
     });
   };
