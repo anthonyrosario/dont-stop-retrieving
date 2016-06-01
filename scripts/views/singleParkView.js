@@ -4,7 +4,7 @@
   var render = function(park) {
     var template = Handlebars.compile($('#single-park-template').text());
     return template(park);
-  }
+  };
 
   singleParkView.initSinglePark = function(park) {
     $('#park-info').empty();
@@ -15,7 +15,7 @@
       // $('#single-park .search-results').append(a.toHtml($('#park-template')));
     // });
     $('#single-park').fadeIn('fast').siblings().hide();
-  }
+  };
 
   module.singleParkView = singleParkView;
 })(window);
