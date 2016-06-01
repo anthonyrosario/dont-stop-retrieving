@@ -29,11 +29,10 @@
       text: reviewText
     };
     Review.submitReview(review);
-<<<<<<< HEAD
-=======
+
     document.getElementById('reviewName').value = '';
     document.getElementById('reviewText').value = '';
->>>>>>> branch-10
+
   });
 
   module.singleParkController = singleParkController;
