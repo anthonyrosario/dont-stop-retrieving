@@ -1,5 +1,5 @@
 (function(module){
-  var reviewsData = {};
+  var reviewData = {};
 
   var config = {
   apiKey: "AIzaSyCX1RjIqsSO49bC-FYz_RhK5AykS0BfdgA",

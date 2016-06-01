@@ -36,6 +36,10 @@
       <p>Address: {{address}}</p>
       <p><a href="{{website}}">{{common_name}} Website</a></p>
     </script>
+    <script id="review-template" type="text/x-handlebars-template">
+      <h2>{{name}}</h2>
+      <p>{{text}}</p>
+    </script>
   </head>
 
   <body>
@@ -97,14 +101,16 @@
       </section>
       <section id="single-park">
         <div id="park-info"></div>
-        <ul class="search-results">
-        </ul>
+        <!-- <ul class="search-results">
+        </ul> -->
         <form>
           Want to review this park?
           Please Enter Your Name: <input id="reviewName" type="text" />
           Please Enter Your Review:<textarea id="reviewText"></textarea>
           <button id="reviewBtn">Add Review</button>
         </form>
+          <div id="review-info">
+        </div>
       </section>
     </main>
 
@@ -128,6 +134,7 @@
     <script src="scripts/views/parkDataView.js"></script>
     <script src="scripts/views/nearestParksView.js"></script>
     <script src="scripts/views/homeView.js"></script>
+    <script src="scripts/views/reviewView.js"></script>
     <script src="scripts/views/singleParkView.js"></script>
     <script src="scripts/controllers/parkDataController.js"></script>
     <script src="scripts/controllers/homeController.js"></script>
