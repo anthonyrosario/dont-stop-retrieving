@@ -17,11 +17,14 @@
   };
 
   MapLocation.findDistance = function(array, userLat, userLng) {
-    array.map(function(a) {
+    var closestArray = [];
+    closestArray = array.map(function(a) {
       distance(userLat, userLng, a.latitude, a.longitude, 'M');
     })
     .sort(function(a, b) {
       return a - b;
-    });
+    })
+    .slice(0, 4);
+    console.log(closestArray);
   }
 });
