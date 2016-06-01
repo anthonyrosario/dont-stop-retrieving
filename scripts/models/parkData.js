@@ -7,7 +7,7 @@
 
   function addUniqueIdentifier() {
     for (var i = 0; i < Park.all.length; i++) {
-      var name = Park.all[i].common_name.replace(/\s/g, "-");
+      var name = Park.all[i].common_name.replace(/[^a-zA-Z0-9_-]/g, '-').toLowerCase();
       console.log(name);
       Park.all[i].id = name;
     }
@@ -37,15 +37,14 @@
     addUniqueIdentifier();
   };
 
-
-    Park.findWhere = function(value, callback) {
-      var singleParkObj = Park.all.filter(function(a) {
-        if(a.id === value) {
-          return a;
-        }
-      });
-      callback(singleParkObj);
-    };
+  Park.findWhere = function(value, callback) {
+    var singleParkObj = Park.all.filter(function(a) {
+      if(a.id === value) {
+        return a;
+      }
+    });
+    callback(singleParkObj);
+  };
 
   module.Park = Park;
 })(window);
