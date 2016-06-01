@@ -11,9 +11,6 @@
     $('#park-info').append(render(park[0]));
     console.log(park);
     $('#single-park .search-results').empty();
-    // Park.all.forEach(function(a){
-      // $('#single-park .search-results').append(a.toHtml($('#park-template')));
-    // });
     $('#single-park').fadeIn('fast').siblings().hide();
   }
 

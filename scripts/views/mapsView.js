@@ -1,6 +1,8 @@
  //(function(module){
   var infoWindow, map1;
   var deleteMarker = [];
+  var userLat = '';
+  var userLng = '';
 
   function initialize() {
     var mapOne = document.getElementById('map-one');
@@ -33,6 +35,8 @@
       map1.setCenter(placeInfo.geometry.location);
       map1.setZoom(12);
       deleteMarker.push(marker);
+      userLat = placeInfo.geometry.location.lat();
+      userLng = placeInfo.geometry.location.lng();
     }
 
   }

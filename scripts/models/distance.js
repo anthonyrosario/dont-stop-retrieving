@@ -13,15 +13,24 @@
     dist = dist * 60 * 1.1515;
     if(unit === 'K') { dist = dist * 1.609344};
     if(unit === 'N') { dist = dist * 0.8684};
+    dist = Math.round(dist * 100)/100;
     return dist;
   };
 
-  MapLocation.findDistance = function(array, userLat, userLon) {
-    array.filter(function(a) {
-      distance(userLat, userLon, a.latitude, a.longitude, 'M');
-    })
-    .sort(function(a, b) {
-      return a - b;
+
+  MapLocation.findDistance = function(array, userLat, userLng) {
+    var distanceArray = [];
+    var closestArray = [];
+    distanceArray = array.map(function(a) {
+      var distance = MapLocation.distance(userLat, userLng, a.latitude, a.longitude, 'M');
+      a.distance = distance;
+      return a;
     });
+    distanceArray.sort(function(a, b) {
+      return a.distance - b.distance;
+    });
+    closestArray = distanceArray.slice(0, 4);
+    return closestArray;
   }
-});
+  module.MapLocation = MapLocation;
+})(window);
