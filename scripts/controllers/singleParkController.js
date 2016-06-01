@@ -21,11 +21,14 @@
     e.preventDefault();
     var reviewName = $('#reviewName').val();
     var reviewText = $('#reviewText').val();
+    var park = location.pathname.match(/\w+-?\w+-?\w+-?/g);
+
     var review = {
       name: reviewName,
+      park: park[1],
       text: reviewText
     };
-    reviewData.submitReview(review);
+    Review.submitReview(review);
   });
 
   module.singleParkController = singleParkController;
