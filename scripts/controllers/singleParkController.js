@@ -25,7 +25,7 @@
       name: reviewName,
       text: reviewText
     };
-    reviewData.submitReview(review);
+    Review.submitReview(review);
   });
 
   module.singleParkController = singleParkController;
