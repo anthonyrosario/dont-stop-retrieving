@@ -15,10 +15,11 @@
 #home .search-bar {
   width: 96%;
   margin: 2%;
+  text-align: center;
 }
 
 #home-page-search {
-  width: 77%;
+  width: 60%;
   margin: 0;
   padding: 1%;
   font-size: 1em;
@@ -26,9 +27,20 @@
 
 #home p {
   margin: 2%;
+  text-align: left;
+}
+
+#home h4 {
+  margin: 2%;
+  text-align: center;
 }
 
 #home button {
   font-size: 1em;
-  padding: 1%;
+  padding: 0.5%;
+  width: 20%;
+}
+
+@media only screen and(min-width: 640px) {
+
 }
