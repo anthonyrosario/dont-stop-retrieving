@@ -1,0 +1,36 @@
+#results {
+  display: none;
+  width: 90%;
+  margin: 0px 5% 20px 5%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.search-results {
+  text-align: left;
+  width: 96%;
+  margin: 5px 2% 5px 2%;
+}
+
+.search-results li {
+  vertical-align: top;
+  display: inline-block;
+  margin: 10px 3% 10px 3%;
+  height: 200px;
+  width: 45%;
+  word-wrap: break-word;
+  border: 1px solid #0B314F;
+}
+
+li h3 {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+li p {
+  margin-bottom: 3px;
+}
+
+#results input {
+  width: 20%;
+}
