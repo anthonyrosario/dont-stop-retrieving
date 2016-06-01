@@ -28,7 +28,7 @@
     autocomplete.bindTo('bounds', map1);
     autocomplete.addListener('place_changed', locationMarker);
 
-    function locationMarker () {
+    function locationMarker() {
       clearArray();
       var placeInfo = autocomplete.getPlace();
       var marker = new google.maps.Marker({map: map1, animation: google.maps.Animation.DROP, position: placeInfo.geometry.location});
@@ -38,8 +38,8 @@
       userLat = placeInfo.geometry.location.lat();
       userLng = placeInfo.geometry.location.lng();
     }
-
   }
+
   function createParks() {
     for(var i = 0; i < Park.all.length; i++) {
       var park = Park.all[i];
