@@ -4,10 +4,12 @@
   singleParkController.index = function(ctx, next) {
     Park.addData();
     singleParkView.initSinglePark(ctx.park);
-    next();
+    // next();
   };
 
   singleParkController.loadSinglePark = function(ctx, next) {
+    Park.addUniqueIdentifier();
+    console.log(Park.all);
     var parkData = function(park) {
       ctx.park = park;
       next();

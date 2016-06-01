@@ -1,16 +1,24 @@
 (function(module) {
+
   function Park(opts) {
     for (key in opts) this[key] = opts[key];
   }
 
   Park.all = [];
 
-  function addUniqueIdentifier() {
-    for (var i = 0; i < Park.all.length; i++) {
-      var name = Park.all[i].common_name.replace(/\W+/g, '-');
-      console.log(name);
-      Park.all[i].id = name;
-    }
+  // function addUniqueIdentifier() {
+  //   for (var i = 0; i < Park.all.length; i++) {
+  //     var name = Park.all[i].common_name.replace(/\W+/g, '-');
+  //     console.log(Park.all[i]);
+  //     Park.all[i].id = name;
+  //   }
+  // }
+  Park.addUniqueIdentifier = function() {
+    Park.all.forEach(function(park) {
+      var name = park.common_name.replace(/\W+/g, '-');
+      park.id = name;
+      console.log(park.id);
+    })
   }
 
   Park.getParks = function(next) {
@@ -34,7 +42,7 @@
     Park.all = data.map(function(ele){
       return new Park(ele);
     });
-    addUniqueIdentifier();
+    Park.addUniqueIdentifier();
   };
 
   Park.addData = function() {
