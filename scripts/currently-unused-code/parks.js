@@ -72,7 +72,7 @@
     webDB.execute('SELECT * FROM parks ORDER BY location DESC', function(rows) {
       if (rows.length) {
         Parks.loadAll(rows);
-        callback();
+        next();
       } else {
         $.ajax({
           url: '',

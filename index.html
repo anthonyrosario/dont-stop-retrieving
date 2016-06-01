@@ -99,6 +99,12 @@
         <div id="park-info"></div>
         <ul class="search-results">
         </ul>
+        <form>
+          Want to review this park?
+          Please Enter Your Name: <input id="reviewName" type="text" />
+          Please Enter Your Review:<textarea id="reviewText"></textarea>
+          <button id="reviewBtn">Add Review</button>
+        </form>
       </section>
     </main>
 
@@ -106,12 +112,14 @@
       <p>Copyright Don't Stop Retrievin' 2016</p>
     </footer>
 
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="vendor/scripts/handlebars.js"></script>
     <script src="vendor/scripts/html5sql.js"></script>
     <script src="vendor/scripts/webdb.js"></script>
     <script src="vendor/scripts/page.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdZPd9eqq9SQlYof16e_Gui2-pzfELs38&v=3.exp&libraries=visualization&libraries=places"></script>
+    <script src="scripts/models/reviewsData.js"></script>
     <script src="scripts/models/dogParkLocation.js"></script>
     <script src="scripts/models/parkData.js"></script>
     <script src="scripts/models/distance.js"></script>

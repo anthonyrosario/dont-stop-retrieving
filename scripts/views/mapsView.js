@@ -28,7 +28,7 @@
     autocomplete.bindTo('bounds', map1);
     autocomplete.addListener('place_changed', locationMarker);
 
-    function locationMarker () {
+    function locationMarker() {
       clearArray();
       var placeInfo = autocomplete.getPlace();
       var marker = new google.maps.Marker({map: map1, animation: google.maps.Animation.DROP, position: placeInfo.geometry.location});
@@ -38,8 +38,8 @@
       userLat = placeInfo.geometry.location.lat();
       userLng = placeInfo.geometry.location.lng();
     }
-
   }
+
   function createParks() {
     for(var i = 0; i < Park.all.length; i++) {
       var park = Park.all[i];
@@ -49,9 +49,11 @@
   };
 
   function addMarker(map, name, location) {
+    var dogIcon = '/../../images/paws.png';
     var marker = new google.maps.Marker({
       position: location,
-      map: map
+      map: map,
+      icon: dogIcon
     });
 
     google.maps.event.trigger($('#map-one')[0], 'resize');
