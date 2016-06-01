@@ -29,8 +29,10 @@
       text: reviewText
     };
     Review.submitReview(review);
+
     document.getElementById('reviewName').value = '';
     document.getElementById('reviewText').value = '';
+
   });
 
   module.singleParkController = singleParkController;

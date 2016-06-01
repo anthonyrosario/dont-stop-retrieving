@@ -1,14 +1,20 @@
 (function(module){
+<<<<<<< HEAD
 <<<<<<< HEAD:scripts/models/reviewsData.js
   var reviewData = {};
 =======
+=======
+>>>>>>> 54b72dc0c4d2632be50b24ade0b688910aff9a30
 
   function Review(opts) {
     for (key in opts) this[key] = opts[key];
   }
 
   Review.all = [];
+<<<<<<< HEAD
 >>>>>>> 46e81d81c2cd9c22f4af2891980de376c6ff2031:scripts/models/reviewData.js
+=======
+>>>>>>> 54b72dc0c4d2632be50b24ade0b688910aff9a30
 
   var config = {
   apiKey: "AIzaSyCX1RjIqsSO49bC-FYz_RhK5AykS0BfdgA",
