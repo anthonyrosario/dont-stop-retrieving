@@ -17,7 +17,7 @@
   };
 
   MapLocation.findDistance = function(array, userLat, userLon) {
-    array.filter(function(a) {
+    array.map(function(a) {
       distance(userLat, userLon, a.latitude, a.longitude, 'M');
     })
     .sort(function(a, b) {
