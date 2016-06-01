@@ -6,8 +6,9 @@
     $('#home').fadeIn('fast').siblings().hide();
   };
   $('#submit').on('click', function() {
+    scroll(0,0);
     $('#results').fadeIn('fast').siblings().hide();
-    nearestParksController.index();
+    parkDataController.index();
   });
   module.homeView = homeView;
 })(window);
