@@ -1,0 +1,24 @@
+{
+  "name": "dont-stop-retreiving",
+  "version": "1.0.0",
+  "description": "this is a fun web app that can find the closest seattle dog park to you and your dog",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.13.3",
+    "express-request-proxy": "^1.0.10"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Champagne91/dont-stop-retreiving.git"
+  },
+  "author": "champagne radcliffe rosario beaton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Champagne91/dont-stop-retreiving/issues"
+  },
+  "homepage": "https://github.com/Champagne91/dont-stop-retreiving#readme"
+}
