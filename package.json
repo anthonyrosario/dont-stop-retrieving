@@ -2,6 +2,7 @@
   "name": "dont-stop-retreiving",
   "version": "1.0.0",
   "description": "this is a fun web app that can find the closest seattle dog park to you and your dog",
+  "main": "server.js",
   "dependencies": {
     "express": "^4.13.3",
     "express-request-proxy": "^1.0.10"
