@@ -7,7 +7,7 @@
 
   function addUniqueIdentifier() {
     for (var i = 0; i < Park.all.length; i++) {
-      var name = Park.all[i].common_name.replace(/\s/g, '-');
+      var name = Park.all[i].common_name.replace(/\W+/g, '-');
       console.log(name);
       Park.all[i].id = name;
     }
