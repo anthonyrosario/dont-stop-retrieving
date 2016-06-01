@@ -1,9 +1,10 @@
 (function(module) {
   var singleParkController = {};
 
-  singleParkController.index = function(ctx) {
+  singleParkController.index = function(ctx, next) {
     Park.addData();
     singleParkView.initSinglePark(ctx.park);
+    next();
   };
 
   singleParkController.loadSinglePark = function(ctx, next) {
