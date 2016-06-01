@@ -27,6 +27,8 @@
     };
     reviewData.submitReview(review);
     reviewView.initReview(review);
+    document.getElementById('reviewName').value = '';
+    document.getElementById('reviewText').value = '';
   });
 
   module.singleParkController = singleParkController;
