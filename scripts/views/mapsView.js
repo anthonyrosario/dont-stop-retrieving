@@ -1,6 +1,8 @@
  //(function(module){
   var infoWindow, map1;
   var deleteMarker = [];
+  var userLat = '';
+  var userLng = '';
 
   function initialize() {
     var mapOne = document.getElementById('map-one');
@@ -29,6 +31,8 @@
     function locationMarker () {
       clearArray();
       var placeInfo = autocomplete.getPlace();
+      userLat = placeInfo.geometry.location.lat();
+      userLng = placeInfo.geometry.location.lng();
       var marker = new google.maps.Marker({map: map1, animation: google.maps.Animation.DROP, position: placeInfo.geometry.location});
       map1.setCenter(placeInfo.geometry.location);
       map1.setZoom(12);
