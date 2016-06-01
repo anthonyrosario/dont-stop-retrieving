@@ -49,7 +49,7 @@
   };
 
   function addMarker(map, name, location) {
-    var dogIcon = '/../../images/dog_face.png';
+    var dogIcon = '/../../images/paws.png';
     var marker = new google.maps.Marker({
       position: location,
       map: map,
