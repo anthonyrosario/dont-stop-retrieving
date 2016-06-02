@@ -35,7 +35,9 @@ function initialize() {
   var myOptions = {
     zoom: 11,
     center: new google.maps.LatLng(47.618217, -122.351832),
-    mapTypeId: [google.maps.MapTypeId.STREET, 'map_style'],
+    mapTypeControlOptions: {
+      mapTypeId: [google.maps.MapTypeId.STREET, 'map_style']
+    },
     zoomControl: true,
     zoomControlOptions: {
       position: google.maps.ControlPosition.RIGHT_CENTER
@@ -44,7 +46,7 @@ function initialize() {
 
   map1 = new google.maps.Map(mapOne, myOptions);
   map1.mapTypes.set('map_style', styledMap);
-  // map1.setMapTypeId('map_style');
+  map1.setMapTypeId('map_style');
 
   var input = document.getElementById('home-page-search');
   var options = {
