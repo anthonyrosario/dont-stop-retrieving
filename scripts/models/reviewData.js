@@ -17,6 +17,25 @@
   var database = app.database();
   var databaseRef = database.ref().child('reviews');
 
+  Review.filterSingleParkReview = function(ctx) {
+    ctx.reviews = Review.all.filter(function(r) {
+      return r.id === ctx.params.id;
+    });
+  };
+
+  Review.getSingleParkReviews = function(ctx, next) {
+    if (next) {
+      if (Review.all === 0) {
+        Review.getReviews();
+        Review.filterSingleParkReview();
+        next();
+      } else {
+        Review.filterSingleParkReview();
+        next();
+      };
+    }
+  };
+
   Review.getReviews = function() {
     databaseRef.once('value', function(snapshot) {
       snapshot.forEach(function(childSnapshot) {
