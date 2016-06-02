@@ -7,10 +7,15 @@
   };
 
   reviewView.initReview = function(review) {
-    $('#review-info').before(render(review));
-    console.log(review);
+    $('#review-info').prepend(render(review));
     $('#review-info').fadeIn('fast');
   };
 
+  reviewView.initSingleParkReview = function(reviews) {
+    reviews.forEach(function (review) {
+      $('#review-info').append(render(review));
+      $('#review-info').fadeIn('fast');
+    });
+  };
   module.reviewView = reviewView;
 })(window);
