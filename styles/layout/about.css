@@ -3,26 +3,41 @@
   padding: 2%;
 }
 
-#about img {
-  width: 100%;
-}
-
 #about div {
   margin-bottom: 4%;
 }
 
-@media only screen and (min-width: 640px) {
-  #about div {
-    display: inline-block;
-  }
+#about img {
+  width: 50%;
+  height: 50%;
+  border-radius: 100%;
+  display: inline-block;
+  max-width: 250px;
+  max-height: 250px;
+  margin-top: 2%;
+  margin-bottom: 5%;
+}
 
-  #about img {
-    width: 45%;
-    display: inherit;
-  }
+#about h1 {
+  text-align: center;
+  padding-top: 4%;
+  padding-bottom: 10%;
+}
+
+.profile-container {
+  text-align: center;
+  margin-left: 3%;
+}
+
+@media only screen and (min-width: 640px) {
 
   #about p {
     width: 45%;
     display: inherit;
+  }
+
+  .profile-container {
+    width: 45%;
+    display: inline-block;
   }
 }
