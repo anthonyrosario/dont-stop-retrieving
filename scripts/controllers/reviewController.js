@@ -1,9 +1,9 @@
 (function(module){
-  var reviewControler = {};
+  var reviewController = {};
 
-  reviewControler.index = function(ctx, next) {
-    
-  }
+  reviewController.index = function(ctx, next) {
+    reviewView.initSingleParkReview(ctx.reviews);
+  };
 
-  module.reviewControler = reviewControler;
+  module.reviewController = reviewController;
 })(window);

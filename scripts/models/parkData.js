@@ -18,8 +18,8 @@
       var name = park.common_name.replace(/\W+/g, '-');
       park.id = name;
       console.log(park.id);
-    })
-  }
+    });
+  };
 
   Park.getParks = function(next) {
     $.ajax({
