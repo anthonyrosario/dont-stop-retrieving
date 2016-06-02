@@ -5,9 +5,5 @@
   homeView.initHomePage = function() {
     $('#home').fadeIn('fast').siblings().hide();
   };
-  $('#submit').on('click', function() {
-    $('#results').fadeIn('fast').siblings().hide();
-    parkDataController.index();
-  });
   module.homeView = homeView;
 })(window);

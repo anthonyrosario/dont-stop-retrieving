@@ -1,3 +1,28 @@
 #about {
   display: none;
+  padding: 2%;
+}
+
+#about img {
+  width: 100%;
+}
+
+#about div {
+  margin-bottom: 4%;
+}
+
+@media only screen and (min-width: 640px) {
+  #about div {
+    display: inline-block;
+  }
+
+  #about img {
+    width: 45%;
+    display: inherit;
+  }
+
+  #about p {
+    width: 45%;
+    display: inherit;
+  }
 }

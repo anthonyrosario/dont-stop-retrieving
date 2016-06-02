@@ -1,4 +1,5 @@
 (function(module) {
+
   function Park(opts) {
     for (key in opts) this[key] = opts[key];
   }
@@ -6,12 +7,11 @@
   Park.all = [];
 
   function addUniqueIdentifier() {
-    for (var i = 0; i < Park.all.length; i++) {
-      var name = Park.all[i].common_name.replace(/\s/g, "-");
-      console.log(name);
-      Park.all[i].id = name;
-    }
-  }
+    Park.all.forEach(function(park) {
+      var name = park.common_name.replace(/\W+/g, '-');
+      park.id = name;
+    });
+  };
 
   Park.getParks = function(next) {
     $.ajax({
@@ -19,7 +19,7 @@
       type: 'GET',
       success: function(data) {
         Park.loadParks(data);
-        createParks();
+        mapsObj.createParks();
         next();
       }
     });
@@ -37,15 +37,21 @@
     addUniqueIdentifier();
   };
 
+  Park.addData = function() {
+    for (var i = 0; i < Park.all.length; i++){
+      Park.all[i].hours = hours[i];
+      Park.all[i].img = imgs[i];
+    }
+  };
 
-    Park.findWhere = function(value, callback) {
-      var singleParkObj = Park.all.filter(function(a) {
-        if(a.id === value) {
-          return a;
-        }
-      });
-      callback(singleParkObj);
-    };
+  Park.findWhere = function(value, callback) {
+    var singleParkObj = Park.all.filter(function(a) {
+      if(a.id === value) {
+        return a;
+      }
+    });
+    callback(singleParkObj);
+  };
 
   module.Park = Park;
 })(window);

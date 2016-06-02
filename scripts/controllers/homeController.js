@@ -3,7 +3,7 @@
 
   homeController.index = function() {
     homeView.initHomePage();
-  }
+  };
 
   module.homeController = homeController;
 })(window);
