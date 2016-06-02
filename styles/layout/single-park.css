@@ -10,7 +10,7 @@
   border-style: solid;
   border-width: thin;
   border-color: black;
-  padding-left: 5em;
+  padding-left: 6%;
   padding-top: 10px;
   padding-bottom: 10px;
   background-color: #0A3138;
@@ -24,12 +24,12 @@
 
 #review-name {
   margin-left: 1.75em;
-  width: 30%;
+  width: 70%;
 }
 
 textarea {
-  min-height: 10px;
-  width: 30%;
+  min-height: 80px;
+  width: 70%;
   margin-left: 1.5em;
 }
 form * {
