@@ -3,7 +3,8 @@
 
   nearestParksView.initResults = function() {
     var nearestParks = [];
-    $('#results').fadeIn('fast').siblings().hide();
+    $('section').hide();
+    $('#results').fadeIn('fast');
     $('.search-results').empty();
     nearestParks = MapLocation.findDistance(Park.all, userLat, userLng);
     nearestParks.forEach(function(park){

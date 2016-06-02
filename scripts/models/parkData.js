@@ -6,19 +6,11 @@
 
   Park.all = [];
 
-  // function addUniqueIdentifier() {
-  //   for (var i = 0; i < Park.all.length; i++) {
-  //     var name = Park.all[i].common_name.replace(/\W+/g, '-');
-  //     console.log(Park.all[i]);
-  //     Park.all[i].id = name;
-  //   }
-  // }
-  Park.addUniqueIdentifier = function() {
+  function addUniqueIdentifier() {
     Park.all.forEach(function(park) {
       var name = park.common_name.replace(/\W+/g, '-');
       park.id = name;
-      console.log(park.id);
-    })
+    });
   }
 
   Park.getParks = function(next) {
@@ -27,7 +19,7 @@
       type: 'GET',
       success: function(data) {
         Park.loadParks(data);
-        createParks();
+        createParks();// FIX WHEN REDOING MAPVIEWS.JS
         next();
       }
     });
@@ -42,7 +34,7 @@
     Park.all = data.map(function(ele){
       return new Park(ele);
     });
-    Park.addUniqueIdentifier();
+    addUniqueIdentifier();
   };
 
   Park.addData = function() {

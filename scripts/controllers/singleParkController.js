@@ -8,7 +8,6 @@
   };
 
   singleParkController.loadSinglePark = function(ctx, next) {
-    Park.addUniqueIdentifier();
     console.log(Park.all);
     var parkData = function(park) {
       ctx.park = park;

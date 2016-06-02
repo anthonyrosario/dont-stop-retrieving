@@ -1,4 +1,4 @@
- //(function(module){
+ // (function(module){
   var infoWindow, map1;
   var deleteMarker = [];
   var userLat = '';
@@ -23,7 +23,6 @@
     var options = {
       types: ['address']
     };
-
     var autocomplete = new google.maps.places.Autocomplete(input, options);
     autocomplete.bindTo('bounds', map1);
     autocomplete.addListener('place_changed', locationMarker);
@@ -31,6 +30,7 @@
     function locationMarker() {
       clearArray();
       var placeInfo = autocomplete.getPlace();
+      console.log(placeInfo);
       var marker = new google.maps.Marker({map: map1, animation: google.maps.Animation.DROP, position: placeInfo.geometry.location});
       map1.setCenter(placeInfo.geometry.location);
       map1.setZoom(12);
