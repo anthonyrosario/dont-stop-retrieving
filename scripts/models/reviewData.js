@@ -17,45 +17,31 @@
   var database = app.database();
   var databaseRef = database.ref().child('reviews');
 
-  Review.filterSingleParkReview = function(ctx) {
-    console.log(Review.all);
+  Review.filterSingleParkReview = function(ctx,next) {
     ctx.reviews = Review.all.filter(function(r) {
-      console.log(r);
       return r.park === ctx.params.id;
     });
-    console.log(ctx.reviews);
+    next();
   };
 
   Review.getSingleParkReviews = function(ctx, next) {
-    console.log('hiii', ctx);
-
-    // if (next) {
-    // Review.getReviews();
-    if (Review.all.length === 0) {
-      Review.filterSingleParkReview(ctx);
-      console.log(ctx.reviews);
-      next();
-    } else {
-      Review.filterSingleParkReview(ctx);
-      next();
-    };
-    // }
+      Review.getReviews(ctx, next, Review.filterSingleParkReview);
   };
 
-  Review.getReviews = function() {
+  Review.getReviews = function(ctx, next, callback) {
     databaseRef.once('value', function(snapshot) {
+      Review.all = [];
       snapshot.forEach(function(childSnapshot) {
         var childData = childSnapshot.val();
         Review.all.push(new Review(childData));
       });
+      callback(ctx, next);
     });
   };
 
   Review.submitReview = function(review) {
     databaseRef.push().set(review);
   };
-
-  Review.getReviews();
 
   module.Review = Review;
 })(window);
