@@ -8,24 +8,24 @@ function initialize() {
 
   var styles = [
     {
-      'featureType': 'water',
-      'elementType': 'geometry',
-      'stylers': [
-        { 'hue': '#22648c' }
+      featureType: 'water',
+      elementType: 'geometry',
+      stylers: [
+        { hue: '#22648c' }
       ]
     },{
-      'featureType': 'road.highway',
-      'elementType': 'geometry.fill',
-      'stylers': [
-        { 'hue': '#1900ff' },
-        { 'visibility': 'on' },
-        { 'color': '#15a3dd' }
+      featureType: 'road.highway',
+      elementType: 'geometry.fill',
+      stylers: [
+        { hue: '#1900ff' },
+        { visibility: 'on' },
+        { color: '#15a3dd' }
       ]
     },{
-      'featureType': 'poi.park',
-      'stylers': [
-        { 'color': '#22408c' },
-        { 'hue': '#00ff19' }
+      featureType: 'poi.park',
+      stylers: [
+        { color: '#22408c' },
+        { hue: '#00ff19' }
       ]
     }
   ];
@@ -35,7 +35,9 @@ function initialize() {
   var myOptions = {
     zoom: 11,
     center: new google.maps.LatLng(47.618217, -122.351832),
-    mapTypeId: [google.maps.MapTypeId.STREET, 'map_style'],
+    mapTypeControlOptions: {
+      mapTypeId: [google.maps.MapTypeId.STREET, 'map_style']
+    },
     zoomControl: true,
     zoomControlOptions: {
       position: google.maps.ControlPosition.RIGHT_CENTER
