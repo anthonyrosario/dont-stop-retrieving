@@ -20,7 +20,7 @@
       type: 'GET',
       success: function(data) {
         Park.loadParks(data);
-        createParks();// FIX WHEN REDOING MAPVIEWS.JS
+        mapsObj.createParks();
         next();
       }
     });

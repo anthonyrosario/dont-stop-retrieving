@@ -28,7 +28,7 @@ function initialize() {
   autocomplete.addListener('place_changed', locationMarker);
 
   function locationMarker() {
-    clearArray();
+    mapsObj.clearArray();
     var placeInfo = autocomplete.getPlace();
     console.log(placeInfo);
     var marker = new google.maps.Marker({map: map1, animation: google.maps.Animation.DROP, position: placeInfo.geometry.location});
