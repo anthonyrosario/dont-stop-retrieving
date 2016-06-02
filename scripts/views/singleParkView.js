@@ -9,7 +9,6 @@
   singleParkView.initSinglePark = function(park) {
     $('#park-info').empty();
     $('#park-info').append(render(park[0]));
-    console.log(park);
     $('#single-park .search-results').empty();
     $('#single-park').fadeIn('fast').siblings().hide();
   };
