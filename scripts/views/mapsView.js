@@ -33,7 +33,17 @@
     for (var i = 0; i < deleteMarker.length; i++) {
       deleteMarker[i].setMap(null);
     }
-    console.log('this is cleared');
+  };
+
+  mapsObj.locationMarker = function(){
+    mapsObj.clearArray();
+    var placeInfo = autocomplete.getPlace();
+    var marker = new google.maps.Marker({map: map1, animation: google.maps.Animation.DROP, position: placeInfo.geometry.location});
+    map1.setCenter(placeInfo.geometry.location);
+    map1.setZoom(12);
+    deleteMarker.push(marker);
+    userLat = placeInfo.geometry.location.lat();
+    userLng = placeInfo.geometry.location.lng();
   };
 
   module.mapsObj = mapsObj;

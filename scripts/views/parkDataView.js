@@ -4,7 +4,7 @@
   parkDataView.initResults = function() {
     $('section').hide();
     $('#results').fadeIn('fast');
-    var center = map1.getCenter();
+    var center = new google.maps.LatLng(47.618217, -122.351832);
     google.maps.event.trigger($('#map-one')[0], 'resize');
     map1.setCenter(center);
     $('.search-results').empty();
