@@ -12,6 +12,11 @@
   height: auto;
 }
 
+#home h4 {
+  font-size: 150%;
+  color: #0A3138;
+}
+
 #home .search-bar {
   width: 96%;
   margin: 2%;
@@ -27,7 +32,9 @@
 
 #home p {
   margin: 2%;
-  text-align: left;
+  text-align: center;
+  color: #808080;
+  line-height: 1.5em;
 }
 
 #home h4 {
