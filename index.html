@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="vendor/styles/reset.css"/>
-    <link rel="stylesheet" href="styles/base/text.css"/>
-    <link rel="stylesheet" href="styles/layout/map.css"/>
-    <link rel="stylesheet" href="styles/layout/header.css"/>
-    <link rel="stylesheet" href="styles/layout/home.css"/>
-    <link rel="stylesheet" href="styles/layout/results.css"/>
-    <link rel="stylesheet" href="styles/layout/single-park.css"/>
-    <link rel="stylesheet" href="styles/layout/about.css"/>
-    <link rel="stylesheet" href="styles/layout/footer.css"/>
+
+    <meta charset="utf-8">
+    <title>Don't Stop Retrievin'</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="vendor/styles/reset.css">
+    <link rel="stylesheet" href="styles/base/text.css">
+    <link rel="stylesheet" href="styles/layout/map.css">
+    <link rel="stylesheet" href="styles/layout/header.css">
+    <link rel="stylesheet" href="styles/layout/home.css">
+    <link rel="stylesheet" href="styles/layout/results.css">
+    <link rel="stylesheet" href="styles/layout/single-park.css">
+    <link rel="stylesheet" href="styles/layout/about.css">
+    <link rel="stylesheet" href="styles/layout/footer.css">
+
     <script id="nearest-park-template" type="text/x-handlebars-template">
       <li>
           <h3>{{common_name}}</h3>
@@ -21,6 +27,7 @@
           <a href="/park/{{id}}">More Info</a>
       </li>
     </script>
+
     <script id="park-template" type="text/x-handlebars-template">
       <li>
           <h3>{{common_name}}</h3>
@@ -30,20 +37,24 @@
           <a href="/park/{{id}}">More Info</a>
       </li>
     </script>
+
     <script id="single-park-template" type="text/x-handlebars-template">
       <h2>{{common_name}}</h2>
-      <img src="/images/{{img}}" />
+      <img src="/images/{{img}}" alt="{{common_name}}"/>
       <p>Hours: {{hours}}</p>
       <p>Address: {{address}}</p>
       <p><a href="{{website}}">{{common_name}} Website</a></p>
     </script>
+
     <script id="review-template" type="text/x-handlebars-template">
       <h2>{{name}}</h2>
       <p>{{text}}</p>
     </script>
+
   </head>
 
   <body>
+
     <header>
       <h1>Don't Stop Retrievin'</h1>
       <ul>
@@ -55,8 +66,9 @@
     </header>
 
     <main>
+
       <section id="home">
-        <img src="https://c2.staticflickr.com/8/7017/6787139267_8bf31fe08e_b.jpg">
+        <img src="https://c2.staticflickr.com/8/7017/6787139267_8bf31fe08e_b.jpg" alt="Dogs At Play">
         <h4>Search for dog parks near you</h4>
         <div class="search-bar">
           <input class="address-input" id="home-page-search" type="text" placeholder="Enter Your Address" autocomplete="off"/>
@@ -64,53 +76,47 @@
         </div>
         <p>Don't Stop Retrieving is an awesome web app that can access any off leash park of your wildest dreams in Seattle, Washington.  There are many great places in Seattle to take your dogs, there are more dogs in Seattle than children because we love dogs!  Come one, come all, enjoy a free off leash dog park.  Enter your address to locate the closest parks to you.  Woof!</p>
       </section>
+
       <section id="results">
           <div class="map" id="map-one"></div>
-
           <ul class="search-results">
           </ul>
       </section>
-      <section id="about">
-    <ul class="main-container">
-        <div class="Anthony">
-          <h1>Anthony</h1>
-          <div class="main">
-          <img src="https://scontent.xx.fbcdn.net/v/t1.0-9/13344536_10157109936125725_1362034115977648577_n.jpg?oh=d6a5e00fb1ce98f48017e8ae4a47d0c0&oe=57C89692" />
-          <p>The path of the righteous man is beset on all sides by the inequities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of the darkness, for he is truly his brothers keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who attempt to poison and destroy My brothers. And you will know I am the Lord when I lay My vengeance upon you. Now I been sayin that shit for years. And if you ever heard it, that meant your ass. Youd be dead right now. I never gave much thought to what it meant. I just thought it was a cold-blooded thing to say to a motherfucker before I popped a cap in his ass. But I saw some shit this mornin made me think twice. See, now Im thinking maybe it means youre the evil man. And Im the righteous man. And Mr. 9mm here. hes the shepherd protecting my righteous ass in the valley of darkness. Or it could mean youre the righteous man and Im the shepherd and its the world thats evil and selfish. And Id like that. But that shit aint the truth. The truth is youre the weak. And Im the tyranny of evil men. But Im tryin, Ringo. Im tryin real hard to be the shepherd. - Pulp Fiction</p>
-        </div></div>
-        <div class="Keiran">
-          <h1>Keiran</h1>
-          <div class="Main">
-          <img src="https://scontent.xx.fbcdn.net/v/t1.0-9/11057401_10205973772802014_1749386719803197501_n.jpg?oh=8ace6cb68bb9bfe8577b155f9bff1fb5&oe=57D34D96" />
-          <p>Dont ask (we may not know), Leuconoe, What end the gods propose for me, or you. Let Chaldees try To read the ciphered sky; Better to bear the outcome, good or bad, Whether Jove proposes to add, Fresh winters to the past Or to make THIS the last. Which now tires out the Tuscan sea and mocks Its strength with barricades of rocks. Be wise, strain clear the wine And prune the rambling vine, Of expectation. Lifes short. Even while we talk TIME, grudging, runs a mile. Dont trust tomorrows bough For fruit. Pluck this, here, NOW. - Horace</p>
-        </div></div>
-        <div class="Tracey">
-          <h1>Tracey</h1>
-          <div class=Main>
-          <img src="https://scontent.xx.fbcdn.net/v/t1.0-9/11873750_10102027256578633_2115913142595647225_n.jpg?oh=3ba66cced9d9ab4f3371af4163f38ba5&oe=57C3631B" />
-          <p>And God is still speaking. We are the party of Kennedy.
 
-    The press has scoured every exit poll for the latest evidence of racial polarization, not just in terms of white and black, but black and brown as well. Let us be our sister's keeper. This too is part of America's promise - the promise of a democracy where we can find the strength and grace to bridge divides and unite in common effort. The men and women who gathered there could've heard many things. Those are not just American ideas, they are human rights, and that is why we will support them everywhere. Countries like Japan and South Korea grew their economies while maintaining distinct cultures.</p>
-        </div></div>
-        <div class="Sean">
-          <h1>Sean</h1>
-          <div class="Main">
-          <img src="https://scontent.xx.fbcdn.net/v/t1.0-9/13006596_10153912690750091_6835451820467652997_n.jpg?oh=e10f71b5a4312764f241d56914d3191e&oe=57B344AE" />
+      <section id="about">
+        <div>
+          <h2>Anthony</h2>
+          <img src="https://scontent.xx.fbcdn.net/v/t1.0-9/13344536_10157109936125725_1362034115977648577_n.jpg?oh=d6a5e00fb1ce98f48017e8ae4a47d0c0&oe=57C89692" alt="Anthony">
+          <p>The path of the righteous man is beset on all sides by the inequities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of the darkness, for he is truly his brothers keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who attempt to poison and destroy My brothers. And you will know I am the Lord when I lay My vengeance upon you. Now I been sayin that shit for years. And if you ever heard it, that meant your ass. Youd be dead right now. I never gave much thought to what it meant. I just thought it was a cold-blooded thing to say to a motherfucker before I popped a cap in his ass. But I saw some shit this mornin made me think twice. See, now Im thinking maybe it means youre the evil man. And Im the righteous man. And Mr. 9mm here. hes the shepherd protecting my righteous ass in the valley of darkness. Or it could mean youre the righteous man and Im the shepherd and its the world thats evil and selfish. And Id like that. But that shit aint the truth. The truth is youre the weak. And Im the tyranny of evil men. But Im tryin, Ringo. Im tryin real hard to be the shepherd. - Pulp Fiction</p>
+        </div>
+        <div>
+          <h2>Keiran</h2>
+          <img src="https://scontent.xx.fbcdn.net/v/t1.0-9/11057401_10205973772802014_1749386719803197501_n.jpg?oh=8ace6cb68bb9bfe8577b155f9bff1fb5&oe=57D34D96" alt="Keiran">
+          <p>Dont ask (we may not know), Leuconoe, What end the gods propose for me, or you. Let Chaldees try To read the ciphered sky; Better to bear the outcome, good or bad, Whether Jove proposes to add, Fresh winters to the past Or to make THIS the last. Which now tires out the Tuscan sea and mocks Its strength with barricades of rocks. Be wise, strain clear the wine And prune the rambling vine, Of expectation. Lifes short. Even while we talk TIME, grudging, runs a mile. Dont trust tomorrows bough For fruit. Pluck this, here, NOW. - Horace</p>
+        </div>
+        <div>
+          <h2>Tracey</h2>
+          <img src="https://scontent.xx.fbcdn.net/v/t1.0-9/11873750_10102027256578633_2115913142595647225_n.jpg?oh=3ba66cced9d9ab4f3371af4163f38ba5&oe=57C3631B" alt="Tracey">
+          <p>And God is still speaking. We are the party of Kennedy. The press has scoured every exit poll for the latest evidence of racial polarization, not just in terms of white and black, but black and brown as well. Let us be our sister's keeper. This too is part of America's promise - the promise of a democracy where we can find the strength and grace to bridge divides and unite in common effort. The men and women who gathered there could've heard many things. Those are not just American ideas, they are human rights, and that is why we will support them everywhere. Countries like Japan and South Korea grew their economies while maintaining distinct cultures.</p>
+        </div>
+        <div>
+          <h2>Sean</h2>
+          <img src="https://scontent.xx.fbcdn.net/v/t1.0-9/13006596_10153912690750091_6835451820467652997_n.jpg?oh=e10f71b5a4312764f241d56914d3191e&oe=57B344AE" alt="Sean">
           <p>We're not going to agree on everything, but we can disagree without being disagreeable. Of course, the answer to the slavery question was already embedded within our Constitution - a Constitution that had at is very core the ideal of equal citizenship under the law; a Constitution that promised its people liberty, and justice, and a union that could be and should be perfected over time. Legalized discrimination - where blacks were prevented, often through violence, from owning property, or loans were not granted to African-American business owners, or black homeowners could not access FHA mortgages, or blacks were excluded from unions, or the police force, or fire departments - meant that black families could not amass any meaningful wealth to bequeath to future generations. It's a racial stalemate we've been stuck in for years. And as so many generations have come to realize over the course of the two-hundred and twenty one years since a band of patriots signed that document in Philadelphia, that is where the perfection begins. And when one of his chief advisors - the man who wrote his economic plan - was talking about the anxiety Americans are feeling, he said that we were just suffering from a "mental recession," and that we've become, and I quote, "a nation of whiners."</p>
-        </div></div>
-        </ul>
-      </section>
-      <section id="single-park">
-        <div id="park-info"></div>
-        <form name="reviewForm">
-          Want to review this park?
-          Please Enter Your Name: <input id="reviewName" type="text" />
-          Please Enter Your Review:<textarea id="reviewText"></textarea>
-          <button id="reviewBtn">Add Review</button>
-        </form>
-          <div id="review-info">
         </div>
       </section>
+
+      <section id="single-park">
+        <div id="park-info"></div>
+        <form name="review-form">
+          Want to review this park?
+          Please Enter Your Name: <input id="review-name" type="text" />
+          Please Enter Your Review:<textarea id="review-text"></textarea>
+          <button id="review-btn">Add Review</button>
+        </form>
+        <div id="review-info"></div>
+      </section>
+
     </main>
 
     <footer>
@@ -119,15 +125,18 @@
 
     <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdZPd9eqq9SQlYof16e_Gui2-pzfELs38&v=3.exp&libraries=visualization&libraries=places"></script>
     <script src="vendor/scripts/handlebars.js"></script>
     <script src="vendor/scripts/html5sql.js"></script>
     <script src="vendor/scripts/webdb.js"></script>
     <script src="vendor/scripts/page.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdZPd9eqq9SQlYof16e_Gui2-pzfELs38&v=3.exp&libraries=visualization&libraries=places"></script>
+
     <script src="scripts/models/reviewData.js"></script>
-    <script src="scripts/models/dogParkLocation.js"></script>
+    <script src="scripts/models/dogParkInfo.js"></script>
     <script src="scripts/models/parkData.js"></script>
     <script src="scripts/models/distance.js"></script>
+    <script src="scripts/models/maps.js"></script>
+
     <script src="scripts/views/aboutView.js"></script>
     <script src="scripts/views/mapsView.js"></script>
     <script src="scripts/views/parkDataView.js"></script>
@@ -135,6 +144,7 @@
     <script src="scripts/views/homeView.js"></script>
     <script src="scripts/views/reviewView.js"></script>
     <script src="scripts/views/singleParkView.js"></script>
+
     <script src="scripts/controllers/parkDataController.js"></script>
     <script src="scripts/controllers/homeController.js"></script>
     <script src="scripts/controllers/aboutController.js"></script>
