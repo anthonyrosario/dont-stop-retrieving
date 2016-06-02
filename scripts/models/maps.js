@@ -8,24 +8,24 @@ function initialize() {
 
   var styles = [
     {
-      'featureType': 'water',
-      'elementType': 'geometry',
-      'stylers': [
-        { 'hue': '#22648c' }
+      featureType: 'water',
+      elementType: 'geometry',
+      stylers: [
+        { hue: '#22648c' }
       ]
     },{
-      'featureType': 'road.highway',
-      'elementType': 'geometry.fill',
-      'stylers': [
-        { 'hue': '#1900ff' },
-        { 'visibility': 'on' },
-        { 'color': '#15a3dd' }
+      featureType: 'road.highway',
+      elementType: 'geometry.fill',
+      stylers: [
+        { hue: '#1900ff' },
+        { visibility: 'on' },
+        { color: '#15a3dd' }
       ]
     },{
-      'featureType': 'poi.park',
-      'stylers': [
-        { 'color': '#22408c' },
-        { 'hue': '#00ff19' }
+      featureType: 'poi.park',
+      stylers: [
+        { color: '#22408c' },
+        { hue: '#00ff19' }
       ]
     }
   ];
@@ -44,7 +44,7 @@ function initialize() {
 
   map1 = new google.maps.Map(mapOne, myOptions);
   map1.mapTypes.set('map_style', styledMap);
-  map1.setMapTypeId('map_style');
+  // map1.setMapTypeId('map_style');
 
   var input = document.getElementById('home-page-search');
   var options = {
