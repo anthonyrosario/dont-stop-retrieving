@@ -27,7 +27,6 @@
       text: reviewText
     };
     Review.submitReview(review);
-    reviewView.initReview(review);
     document.getElementById('review-name').value = '';
     document.getElementById('review-text').value = '';
 
