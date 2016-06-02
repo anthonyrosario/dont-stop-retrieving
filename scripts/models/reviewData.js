@@ -18,28 +18,19 @@
   var databaseRef = database.ref().child('reviews');
 
   Review.filterSingleParkReview = function(ctx) {
-    console.log(Review.all);
     ctx.reviews = Review.all.filter(function(r) {
-      console.log(r);
       return r.park === ctx.params.id;
     });
-    console.log(ctx.reviews);
   };
 
   Review.getSingleParkReviews = function(ctx, next) {
-    console.log('hiii', ctx);
-
-    // if (next) {
-    // Review.getReviews();
     if (Review.all.length === 0) {
       Review.filterSingleParkReview(ctx);
-      console.log(ctx.reviews);
       next();
     } else {
       Review.filterSingleParkReview(ctx);
       next();
     };
-    // }
   };
 
   Review.getReviews = function() {
