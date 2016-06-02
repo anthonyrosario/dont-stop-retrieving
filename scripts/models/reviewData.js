@@ -43,5 +43,12 @@
     databaseRef.push().set(review);
   };
 
+  databaseRef.on('child_added', function(snapshot) {
+    var newReview = new Review(snapshot.val());
+    Review.all.push(newReview);
+    reviewView.initReview(newReview);
+
+  });
+
   module.Review = Review;
 })(window);
