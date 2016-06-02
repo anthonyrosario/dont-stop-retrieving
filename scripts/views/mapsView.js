@@ -1,22 +1,22 @@
- // (function(module){
+(function(module){
 
-  function createParks() {
+  var mapsObj = {};
+
+  mapsObj.createParks = function() {
     for(var i = 0; i < Park.all.length; i++) {
       var park = Park.all[i];
       var location = new google.maps.LatLng(park['latitude'], park['longitude']);
-      addMarker(map1, park['common_name'], location);
+      mapsObj.addMarker(map1, park['common_name'], location);
     }
   };
 
-  function addMarker(map, name, location) {
+  mapsObj.addMarker = function(map, name, location) {
     var dogIcon = '/../../images/paws.png';
     var marker = new google.maps.Marker({
       position: location,
       map: map,
       icon: dogIcon
     });
-
-    google.maps.event.trigger($('#map-one')[0], 'resize');
 
     google.maps.event.addListener(marker, 'click', function(){
       if (typeof infoWindow != 'undefined'){
@@ -27,15 +27,14 @@
       });
       infoWindow.open(map, marker);
     });
-  }
+  };
 
-  function clearArray() {
+  mapsObj.clearArray = function(){
     for (var i = 0; i < deleteMarker.length; i++) {
       deleteMarker[i].setMap(null);
     }
     console.log('this is cleared');
-  }
+  };
 
-  google.maps.event.addDomListener(window, 'load', initialize); //come back to this
-
-// })();
+  module.mapsObj = mapsObj;
+})(window);

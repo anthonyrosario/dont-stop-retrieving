@@ -13,14 +13,13 @@
     });
   };
 
-
   Park.getParks = function(next) {
     $.ajax({
       url: 'https://data.seattle.gov/resource/3c4b-gdxv.json?city_feature=Off+Leash+Areas',
       type: 'GET',
       success: function(data) {
         Park.loadParks(data);
-        createParks();// FIX WHEN REDOING MAPVIEWS.JS
+        mapsObj.createParks();
         next();
       }
     });
