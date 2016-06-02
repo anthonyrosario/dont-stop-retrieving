@@ -16,8 +16,6 @@
       icon: dogIcon
     });
 
-    google.maps.event.trigger($('#map-one')[0], 'resize');
-
     google.maps.event.addListener(marker, 'click', function(){
       if (typeof infoWindow != 'undefined'){
         infoWindow.close();
@@ -35,7 +33,5 @@
     }
     console.log('this is cleared');
   }
-
-  google.maps.event.addDomListener(window, 'load', initialize); //come back to this
 
 // })();

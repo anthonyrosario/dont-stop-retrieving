@@ -39,3 +39,5 @@ function initialize() {
     userLng = placeInfo.geometry.location.lng();
   }
 }
+
+google.maps.event.addDomListener(window, 'load', initialize);
