@@ -18,22 +18,28 @@
   var databaseRef = database.ref().child('reviews');
 
   Review.filterSingleParkReview = function(ctx) {
+    console.log(Review.all);
     ctx.reviews = Review.all.filter(function(r) {
-      return r.id === ctx.params.id;
+      console.log(r);
+      return r.park === ctx.params.id;
     });
+    console.log(ctx.reviews);
   };
 
   Review.getSingleParkReviews = function(ctx, next) {
-    if (next) {
-      if (Review.all === 0) {
-        Review.getReviews();
-        Review.filterSingleParkReview();
-        next();
-      } else {
-        Review.filterSingleParkReview();
-        next();
-      };
-    }
+    console.log('hiii', ctx);
+
+    // if (next) {
+    // Review.getReviews();
+    if (Review.all.length === 0) {
+      Review.filterSingleParkReview(ctx);
+      console.log(ctx.reviews);
+      next();
+    } else {
+      Review.filterSingleParkReview(ctx);
+      next();
+    };
+    // }
   };
 
   Review.getReviews = function() {
@@ -48,6 +54,8 @@
   Review.submitReview = function(review) {
     databaseRef.push().set(review);
   };
+
+  Review.getReviews();
 
   module.Review = Review;
 })(window);
