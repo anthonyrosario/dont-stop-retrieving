@@ -1,6 +1,6 @@
- (function(module){
+(function(module){
 
-   var mapsObj = {};
+  var mapsObj = {};
 
   mapsObj.createParks = function() {
     for(var i = 0; i < Park.all.length; i++) {
@@ -27,14 +27,14 @@
       });
       infoWindow.open(map, marker);
     });
-  }
+  };
 
   mapsObj.clearArray = function(){
     for (var i = 0; i < deleteMarker.length; i++) {
       deleteMarker[i].setMap(null);
     }
     console.log('this is cleared');
-  }
+  };
 
   module.mapsObj = mapsObj;
 })(window);
