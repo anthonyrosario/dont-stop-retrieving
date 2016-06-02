@@ -17,6 +17,7 @@
   display: inline-block;
   margin: 10px 3% 10px 3%;
   height: 175px;
+  overflow-y: auto;
   width: 35%;
   word-wrap: break-word;
   border: 1px solid #0B314F;
