@@ -7,11 +7,11 @@
   Review.all = [];
 
   var config = {
-    apiKey: 'AIzaSyCX1RjIqsSO49bC-FYz_RhK5AykS0BfdgA',
-    authDomain: 'dog-park-reviews.firebaseapp.com',
-    databaseURL: 'https://dog-park-reviews.firebaseio.com',
-    storageBucket: 'dog-park-reviews.appspot.com',
-  };
+   apiKey: "AIzaSyBwSHRImqHsjV2Xz7204qEhz7F4cBexHeg",
+   authDomain: "dog-park-reviews-7ce13.firebaseapp.com",
+   databaseURL: "https://dog-park-reviews-7ce13.firebaseio.com",
+   storageBucket: "dog-park-reviews-7ce13.appspot.com",
+ };
 
   var app = firebase.initializeApp(config);
   var database = app.database();
